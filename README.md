@@ -1,6 +1,6 @@
 # firemonkey-lista-compras
 
-Um aplicativo simples de lista de compras, desenvolvido em delphi.
+Um aplicativo simples de lista de compras, desenvolvido em delphi utilizando sqlite como base de dados.
 
 ## Screenshots
 
