@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/05/30 17:44:13.000.456,=C:\Users\Progamacao-02\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/02/05 14:25:54.000.492,=C:\Users\Progamacao-02\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/04/25 17:17:12.000.136,=C:\Users\Progamacao-02\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/04 15:37:41.000.079,=C:\Users\Progamacao-02\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/07/23 12:49:35.000.273,=C:\Users\Progamacao-02\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/07/23 13:18:25.000.334,C:\Users\Progamacao-02\Documents\Embarcadero\Studio\Projects\Unit1.fmx=D:\Dev\FireMonkey\uMain.fmx</Transaction>
+    <Transaction>2019/07/23 13:18:25.000.334,C:\Users\Progamacao-02\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Dev\FireMonkey\uMain.pas</Transaction>
+    <Transaction>2019/07/23 13:18:35.000.850,C:\Users\Progamacao-02\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Dev\FireMonkey\ShopList.dproj</Transaction>
+    <Transaction>2019/07/23 13:35:25.000.871,C:\Users\Progamacao-02\Desktop\shoplist.s3db=</Transaction>
+    <Transaction>2019/07/23 13:38:04.000.277,C:\Users\Progamacao-02\Desktop\shoplist.s3db=</Transaction>
+    <Transaction>2019/07/23 13:44:22.000.595,C:\Users\Progamacao-02\Desktop\shoplist.s3db=</Transaction>
+    <Transaction>2019/11/12 12:56:39.000.143,C:\Users\Public\Documents\Embarcadero\Studio\18.0\Samples\Data\shoplist.db=</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="emulator-5554"/>
+	</ActiveMobileDevice>
+</BorlandProject>

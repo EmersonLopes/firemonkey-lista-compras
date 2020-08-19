@@ -1,0 +1,136 @@
+object FrmMain: TFrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Shop List'
+  ClientHeight = 464
+  ClientWidth = 345
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object ToolBar1: TToolBar
+    Size.Width = 345.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Label1: TLabel
+      Align = Client
+      Size.Width = 297.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Text = 'Lista de Compras'
+    end
+    object ButtonAdd: TButton
+      Align = Right
+      Position.X = 297.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'addtoolbutton'
+      TabOrder = 0
+      Text = 'ButtonAdd'
+      OnClick = ButtonAddClick
+    end
+    object ButtonDelete: TButton
+      Align = Left
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'deletetoolbutton'
+      TabOrder = 1
+      Text = 'Delete'
+      Visible = False
+      OnClick = ButtonDeleteClick
+    end
+  end
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TListItemAppearance'
+    ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Client
+    Size.Width = 345.000000000000000000
+    Size.Height = 416.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    OnItemClick = ListView1ItemClick
+  end
+  object ConexaoBD: TFDConnection
+    Params.Strings = (
+      'Database=D:\Dev\FireMonkey\db\shoplist.db'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    BeforeConnect = ConexaoBDBeforeConnect
+    Left = 288
+    Top = 120
+  end
+  object FDQueryCreateTable: TFDQuery
+    Connection = ConexaoBD
+    SQL.Strings = (
+      'CREATE TABLE IF NOT EXISTS Item (ShopItem TEXT NOT NULL)')
+    Left = 288
+    Top = 64
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = FDQuery1
+    ScopeMappings = <>
+    Left = 288
+    Top = 184
+  end
+  object FDQuery1: TFDQuery
+    Connection = ConexaoBD
+    SQL.Strings = (
+      'select ShopItem from Item')
+    Left = 288
+    Top = 240
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 61
+    object LinkFillControlToFieldShopItem: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'ShopItem'
+      Control = ListView1
+      Track = True
+      FillDataSource = BindSourceDB1
+      FillDisplayFieldName = 'ShopItem'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object FDQueryInsert: TFDQuery
+    Connection = ConexaoBD
+    SQL.Strings = (
+      'INSERT INTO ITEM (ShopItem) VALUES (:ShopItem)')
+    Left = 176
+    Top = 160
+    ParamData = <
+      item
+        Name = 'SHOPITEM'
+        DataType = ftString
+        ParamType = ptInput
+      end>
+  end
+  object FDQueryDelete: TFDQuery
+    Connection = ConexaoBD
+    SQL.Strings = (
+      'delete from Item where ShopItem = :ShopItem')
+    Left = 288
+    Top = 296
+    ParamData = <
+      item
+        Name = 'SHOPITEM'
+        DataType = ftString
+        ParamType = ptInput
+      end>
+  end
+end
